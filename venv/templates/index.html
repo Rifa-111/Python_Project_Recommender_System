@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Recommender System</title>
+    <title>Netflix-like Header</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Movie Recommender System</h1>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Netflix</h1>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="/signup">Sign Up</a></li> <!-- Signup option -->
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <div class="container">
-        <div class="row">
-            {% for movie in movies %}
-                <div class="column">
-                    <div class="movie-poster" onclick="getRecommendations({{ movie.id }})">
-                        <img src="{{ url_for('static', filename=movie.poster) }}" alt="{{ movie.title }}">
-                    </div>
-                    <div class="movie-title">{{ movie.title }}</div>
-                </div>
-            {% endfor %}
-        </div>
+        <!-- Your page content goes here -->
     </div>
-
-    <!-- Modal for displaying recommendations -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Recommended Movies</h2>
-            <div id="recommendations"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

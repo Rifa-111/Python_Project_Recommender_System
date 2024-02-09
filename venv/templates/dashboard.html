@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <h1 class="dashboard-heading">Welcome, {{ username }}!</h1>
+        <h2 class="dashboard-subheading">Recommended Projects:</h2>
+        <ul class="dashboard-list">
+            {% for project in projects %}
+                <li>{{ project.description }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
